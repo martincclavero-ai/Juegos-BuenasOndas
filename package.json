@@ -1,0 +1,33 @@
+{
+  "name": "laselecciongame",
+  "version": "1.0.0",
+  "description": "La Selección - Memoria de los Auspiciantes",
+  "main": "main.js",
+  "author": "Martin C",
+  "license": "ISC",
+
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+
+  "build": {
+    "appId": "com.laseleccion.memoria",
+    "productName": "La Selección - Memoria",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+
+  "devDependencies": {
+    "electron": "^43.0.0",
+    "electron-builder": "^26.0.12"
+  }
+}

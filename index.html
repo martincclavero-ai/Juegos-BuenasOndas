@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La Selección - Memoria</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- PANTALLA DE INICIO -->
+
+    <section id="inicio">
+
+        <div id="contenidoInicio">
+
+            <img src="assets/images/logo.png"
+                 id="logoInicio"
+                 alt="La Selección">
+
+            <h2 id="subtituloInicio">
+
+                MEMORIA DE LOS AUSPICIANTES
+
+            </h2>
+
+            <div id="lineaInicio"></div>
+
+            <button id="btnComenzar">
+
+                COMENZAR
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- PANTALLA DEL JUEGO -->
+
+    <section id="juego" style="display:none;">
+
+        <header id="infoJuego">
+
+            <div id="contadorParejas">
+
+                Parejas:
+                <span id="parejas">0</span>/13
+
+            </div>
+
+            <div id="cronometro">
+
+                Tiempo:
+                <span id="tiempo">00:00</span>
+
+            </div>
+
+        </header>
+
+        <main id="tablero"></main>
+
+    </section>
+
+    <!-- PANTALLA FINAL -->
+
+    <section id="pantallaFinal" style="display:none;">
+
+        <img src="assets/images/logo.png"
+             class="logoFinal"
+             alt="La Selección">
+
+        <h1>🏆 FELICITACIONES</h1>
+
+        <h2>Completaste el desafío</h2>
+
+        <div id="estadisticasFinales">
+
+            <p>Parejas: <span id="parejasFinal">0</span>/13</p>
+
+            <p>Tiempo: <span id="tiempoFinal">00:00</span></p>
+
+        </div>
+
+        <button id="btnReiniciar">
+
+            JUGAR NUEVAMENTE
+
+        </button>
+
+    </section>
+<script src="js/sponsors.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>

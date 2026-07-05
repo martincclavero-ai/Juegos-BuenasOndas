@@ -1,0 +1,472 @@
+/* ==========================================================
+   LA SELECCIÓN - MEMORIA DE LOS AUSPICIANTES
+   STYLE.CSS
+========================================================== */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* VARIABLES */
+
+:root{
+
+    --azul:#0EA5FF;
+    --azulOscuro:#0078FF;
+    --blanco:#FFFFFF;
+    --negro:#050505;
+
+}
+
+/* BODY */
+
+body{
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:radial-gradient(circle at center,#1b1b1b 0%,#050505 75%);
+
+    font-family:'Montserrat',sans-serif;
+
+    color:white;
+
+}
+
+/* PANTALLAS */
+
+#inicio,
+#juego,
+#pantallaFinal{
+
+    width:100vw;
+    height:100vh;
+
+}
+
+/* ==========================
+      PANTALLA INICIO
+========================== */
+
+#inicio{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+#contenidoInicio{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    transform:translateY(-120px);
+
+}
+
+#logoInicio{
+
+    width:1000px;
+
+    max-width:80vw;
+
+    height:auto;
+
+    margin-bottom:-20px;
+
+    filter:drop-shadow(0 0 25px rgba(0,170,255,.30));
+
+}
+
+#subtituloInicio{
+
+    font-size:54px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+
+}
+
+#lineaInicio{
+
+    width:380px;
+
+    height:4px;
+
+    background:var(--azul);
+
+    border-radius:30px;
+
+    margin-bottom:30px;
+
+}
+
+#btnComenzar{
+
+    width:380px;
+
+    height:80px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(90deg,var(--azulOscuro),var(--azul));
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#btnComenzar:hover{
+
+    transform:translateY(-3px);
+
+}
+/* ==========================================================
+   PANTALLA DE JUEGO
+========================================================== */
+
+#juego{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding-top:25px;
+
+}
+
+#infoJuego{
+
+    width:1400px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+#contadorParejas,
+#cronometro{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    padding:12px 24px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.06);
+
+    border:2px solid rgba(14,165,255,.35);
+
+    backdrop-filter:blur(6px);
+
+    box-shadow:0 0 18px rgba(14,165,255,.15);
+
+}
+
+#parejas,
+#tiempo{
+
+    color:var(--azul);
+
+    font-weight:800;
+
+}
+
+/* ==========================================================
+   TABLERO
+========================================================== */
+
+#tablero{
+
+    width:1450px;
+
+    display:grid;
+
+    grid-template-columns:repeat(6, 1fr);
+
+    gap:18px;
+
+    justify-items:center;
+
+    align-content:center;
+
+}
+/* ==========================================================
+   CARTAS
+========================================================== */
+
+.carta{
+
+    width:210px;
+    height:150px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transform-style:preserve-3d;
+
+    transition:transform .6s;
+
+    overflow:visible;
+
+}
+
+.carta.girada{
+
+    transform:rotateY(180deg);
+
+}
+
+.carta:hover{
+
+    transform:scale(1.03);
+
+}
+
+.carta.girada{
+
+    transform:rotateY(180deg);
+
+}
+
+/* CARAS */
+
+.cara{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:16px;
+
+    backface-visibility:hidden;
+
+    overflow:visible;
+
+}
+
+/* DORSO */
+
+.dorso{
+
+    background:#1d1d1d;
+
+    border:3px solid var(--azul);
+
+}
+
+.logoCarta{
+
+    width:75%;
+
+    object-fit:contain;
+
+    pointer-events:none;
+
+}
+
+/* FRENTE */
+
+.frente{
+
+    background:white;
+
+    border:3px solid var(--azul);
+
+    transform:rotateY(180deg);
+
+}
+
+/* CONTENIDO */
+
+.contenidoCarta{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:12px;
+
+}
+
+/* LOGOS */
+
+.logoSponsor{
+
+    max-width:100%;
+
+    max-height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+}
+
+/* CHAPITA */
+
+.chapita{
+
+    position:absolute;
+
+    bottom:-16px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:46px;
+
+    height:34px;
+
+    border-radius:20px;
+
+    background:var(--azul);
+
+    color:white;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border:3px solid white;
+
+    box-shadow:0 0 12px rgba(0,0,0,.45);
+
+    z-index:10;
+
+}
+/* ==========================================================
+   PANTALLA FINAL
+========================================================== */
+
+#pantallaFinal{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.logoFinal{
+
+    width:650px;
+
+    max-width:80vw;
+
+    margin-bottom:25px;
+
+    filter:drop-shadow(0 0 25px rgba(0,170,255,.30));
+
+}
+
+#pantallaFinal h1{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+#pantallaFinal h2{
+
+    font-size:32px;
+
+    margin-bottom:30px;
+
+}
+
+#estadisticasFinales{
+
+    font-size:30px;
+
+    line-height:2;
+
+    margin-bottom:40px;
+
+}
+
+#btnReiniciar{
+
+    width:380px;
+
+    height:80px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(90deg,var(--azulOscuro),var(--azul));
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#btnReiniciar:hover{
+
+    transform:translateY(-3px);
+
+}
